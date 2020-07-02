@@ -1,0 +1,12 @@
+{
+    "myTxt": {
+        "prefix": ["mytxt","Mytxt"],
+        "body": ["MyTxt"],
+        "description": "mytxt extension keyword"
+    },
+    "If Block": {
+      "prefix": ["if"],
+      "body": ["if (${1:conditional statement}) {", "\t$0", "}"],
+      "description": "If block"
+    }
+}

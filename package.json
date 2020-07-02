@@ -1,0 +1,80 @@
+{
+	"name": "mytxtextension",
+	"displayName": "MyTxtExtension",
+	"description": "An extesnsion for text files",
+	"version": "0.0.1",
+	"publisher": "malintha16",
+	"icon": "resources/images/myTxt.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/siddhi-io/siddhi-plugin-vscode"
+	  },
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:mytxtextension.helloWorld",
+		"onLanguage:mytxt"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "mytxt",
+				"aliases": [
+					"mytxt",
+					"MyTxt"
+				],
+				"extensions": [
+					".mytxt"
+				]
+			}
+		],
+		"commands": [
+			{
+				"command": "mytxtextension.helloWorld",
+				"title": "Hello World"
+			}
+		],
+		"grammars": [
+			{
+				"language": "mytxt",
+				"scopeName": "source.mytxt",
+				"path": "./grammar/syntaxes/mytxt.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "mytxt",
+				"path": "./snippets/mytxt.json"
+			}
+		]
+	},
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.45.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"vsce": "^1.77.0"
+	}
+}

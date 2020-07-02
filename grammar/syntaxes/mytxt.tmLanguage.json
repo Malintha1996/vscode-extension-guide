@@ -1,0 +1,42 @@
+{
+    "scopeName": "source.mytxt",
+    "patterns": [{ "include": "#keywords" }, { "include": "#string" }, { "include": "#number" },{ "include": "#comment" }],
+    "repository": {
+      "comment": {
+        "match":"\\-\\-.*",
+        "name":"comment.line.double-dash.mytxt"
+      },
+      "keywords": {
+        "match": "if|for|while|print",
+        "name": "keyword.letter.mytxt"
+      },
+      "string": {
+        "begin": "\\\"",
+        "end": "\\\"",
+        "beginCaptures": {
+          "0": {
+            "name": "string.begin.mytxt"
+          }
+        },
+        "endCaptures": {
+          "0": {
+            "name": "string.end.mytxt"
+          }
+        },
+        "patterns": [
+          {
+            "name": "constant.character.escape.siddhi",
+            "match": "\\\\."
+          },
+          {
+            "name": "string.quoted.double.siddhi",
+            "match": "."
+          }
+        ]
+      },
+      "number": {
+        "match": "[0-9]\\d*",
+        "name": "constant.numeric.mytxt"
+      } 
+    }
+}
